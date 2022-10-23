@@ -1,8 +1,12 @@
 package food;
 
 
-import food.pizza.*;
+import food.pizza.Pizza;
+import food.pizza.PizzaCrust;
+import food.pizza.PizzaSize;
+import food.pizza.PizzaTopping;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class PizzaTests {
