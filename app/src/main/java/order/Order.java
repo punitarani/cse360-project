@@ -9,6 +9,7 @@ import java.util.Random;
 public class Order {
     private final String id;
     private final ArrayList<Item> items;
+    private OrderStatus status;
 
     // Create a random number generator
     Random rand = new Random();
@@ -19,7 +20,10 @@ public class Order {
     public Order() {
         this.id = generateID();
         this.items = new ArrayList<>();
+        this.status = OrderStatus.PENDING;
     }
+
+    // region Getters and Setters
 
     /**
      * @return Order ID
@@ -36,6 +40,25 @@ public class Order {
     }
 
     /**
+     * @return Order Status
+     */
+    public OrderStatus getStatus() {
+        return status;
+    }
+
+    /**
+     * Set Order Status
+     * @param status Order Status
+     */
+    public void setStatus(OrderStatus status) {
+        this.status = status;
+    }
+
+    // endregion Getters and Setters
+
+    // region Public Methods
+
+    /**
      * @param item Add item to order
      */
     public void addItem(Item item) {
@@ -48,6 +71,10 @@ public class Order {
     public void removeItem(Item item) {
         items.remove(item);
     }
+
+    // endregion Public Methods
+
+    // region Helper Methods
 
     /**
      * @return Randomly generated Order ID
@@ -66,4 +93,6 @@ public class Order {
 
         return sb.toString();
     }
+
+    // endregion Helper Methods
 }

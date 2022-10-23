@@ -12,6 +12,13 @@ class OrderTests {
     void testOrderInit() {
         assertEquals(10, order.getId().length());
         assertEquals(0, order.getItems().size());
+        assertEquals(OrderStatus.PENDING, order.getStatus());
+    }
+
+    @Test
+    void testOrderStatus() {
+        order.setStatus(OrderStatus.PREPARING);
+        assertEquals(OrderStatus.PREPARING, order.getStatus());
     }
 
     @Test
