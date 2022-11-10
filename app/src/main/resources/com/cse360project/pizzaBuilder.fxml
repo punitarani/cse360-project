@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<SplitPane dividerPositions="0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
+   <items>
+      <Pane prefWidth="200.0" />
+      <VBox prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <ScrollPane prefHeight="460.0" prefWidth="200.0">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="370.0" prefWidth="290.0" />
+              </content>
+            </ScrollPane>
+            <ButtonBar prefHeight="40.0" prefWidth="200.0">
+              <buttons>
+                  <Label alignment="CENTER_RIGHT" text="\$0.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                <Button mnemonicParsing="false" text="Place Order">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+              </buttons>
+            </ButtonBar>
+         </children>
+      </VBox>
+   </items>
+</SplitPane>
