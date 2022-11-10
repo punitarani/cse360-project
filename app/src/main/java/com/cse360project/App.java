@@ -35,6 +35,7 @@ public class App extends Application {
 
         loadComponents();
         setMainPane("primary");
+        setHeaderPane("components/header");
     }
 
     /**
@@ -53,6 +54,16 @@ public class App extends Application {
     static void setMainPane(String fxml) throws IOException {
         mainPane.getChildren().clear();
         mainPane.getChildren().add(loadFXML(fxml));
+    }
+
+    /**
+     * Set the header pane (#headerPane in app.fxml)
+     * @param fxml The fxml file to load
+     * @throws IOException If the fxml file is not found
+     */
+    static void setHeaderPane(String fxml) throws IOException {
+        headerPane.getChildren().clear();
+        headerPane.getChildren().add(loadFXML(fxml));
     }
 
     /**
