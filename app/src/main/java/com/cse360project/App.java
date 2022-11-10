@@ -14,29 +14,9 @@ import java.io.IOException;
  */
 public class App extends Application {
 
-    private static Scene scene;
     public static Pane mainPane;
     public static Pane headerPane;
-
-    /**
-     * Starts the application
-     *
-     * @param stage the primary stage for this application, onto which the application scene can be set.
-     * Applications may create other stages, if needed, but they will not be primary stages.
-     *
-     * @throws IOException if any of the FXML files cannot be loaded.
-     */
-    @Override
-    public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("app"), 640, 480);
-        stage.setTitle("ASU Group 48 Pizza Kitchen");
-        stage.setScene(scene);
-        stage.show();
-
-        loadComponents();
-        setMainPane("primary");
-        setHeaderPane("components/header");
-    }
+    private static Scene scene;
 
     /**
      * Load the components of the app
@@ -81,6 +61,26 @@ public class App extends Application {
 
     public static void main(String[] args) {
         launch();
+    }
+
+    /**
+     * Starts the application
+     *
+     * @param stage the primary stage for this application, onto which the application scene can be set.
+     * Applications may create other stages, if needed, but they will not be primary stages.
+     *
+     * @throws IOException if any of the FXML files cannot be loaded.
+     */
+    @Override
+    public void start(Stage stage) throws IOException {
+        scene = new Scene(loadFXML("app"), 640, 480);
+        stage.setTitle("ASU Group 48 Pizza Kitchen");
+        stage.setScene(scene);
+        stage.show();
+
+        loadComponents();
+        setMainPane("primary");
+        setHeaderPane("components/header");
     }
 
 }
