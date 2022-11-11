@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -74,6 +75,8 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("app"), 640, 480);
+        scene.setFill(Color.TRANSPARENT);
+
         stage.setTitle("ASU Group 48 Pizza Kitchen");
         stage.setScene(scene);
         stage.show();
