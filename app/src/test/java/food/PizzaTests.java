@@ -52,6 +52,11 @@ class PizzaTests {
     }
 
     @Test
+    void testPizzaGetContents() {
+        assertEquals("SIZE: MEDIUM\nCRUST: REGULAR\nTOPPINGS: \n\tNone\n", pizza.getContents());
+    }
+
+    @Test
     void testSetters() {
         Pizza pizza = this.pizza;
 
