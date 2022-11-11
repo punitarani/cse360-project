@@ -77,13 +77,13 @@ public class App extends Application {
         scene = new Scene(loadFXML("app"), 640, 480);
         scene.setFill(Color.TRANSPARENT);
 
-        stage.setTitle("ASU Group 48 Pizza Kitchen");
-        stage.setScene(scene);
-        stage.show();
-
         loadComponents();
         setMainPane("primary");
         setHeaderPane("components/header");
+
+        stage.setTitle("ASU Group 48 Pizza Kitchen");
+        stage.setScene(scene);
+        stage.show();
     }
 
 }
