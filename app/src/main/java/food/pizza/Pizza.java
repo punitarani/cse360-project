@@ -54,16 +54,16 @@ public class Pizza extends Item {
         StringBuilder contents = new StringBuilder();
 
         // Add the size
-        contents.append("SIZE: ").append(size).append("\n");
+        contents.append("Size: ").append(size.getSize()).append("\n");
 
         // Add the crust
-        contents.append("CRUST: ").append(crust).append("\n");
+        contents.append("Crust: ").append(crust.getCrust()).append("\n");
 
         // Add the toppings
-        contents.append("TOPPINGS: ").append("\n");
+        contents.append("Toppings: ").append("\n");
         if (toppings.length > 0) {
             for (PizzaTopping topping : toppings) {
-                contents.append("\t").append(topping).append("\n");
+                contents.append("\t").append(topping.getTopping()).append("\n");
             }
         } else {
             contents.append("\t").append("None").append("\n");

@@ -53,7 +53,7 @@ class PizzaTests {
 
     @Test
     void testPizzaGetContents() {
-        assertEquals("SIZE: MEDIUM\nCRUST: REGULAR\nTOPPINGS: \n\tNone\n", pizza.getContents());
+        assertEquals("Size: Medium\nCrust: Regular\nToppings: \n\tNone\n", pizza.getContents());
     }
 
     @Test
