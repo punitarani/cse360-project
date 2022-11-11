@@ -39,6 +39,12 @@ public abstract class Item {
                 '}';
     }
 
+    /**
+     * Get the contents of the item
+     * @return Item contents strings with one item per line
+     */
+    public abstract String getContents();
+
     // region Getters and Setters
     public String getName() {
         return name;
