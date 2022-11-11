@@ -49,6 +49,30 @@ public class Pizza extends Item {
                 '}';
     }
 
+    public String getContents() {
+        // Create a string builder
+        StringBuilder contents = new StringBuilder();
+
+        // Add the size
+        contents.append("SIZE: ").append(size).append("\n");
+
+        // Add the crust
+        contents.append("CRUST: ").append(crust).append("\n");
+
+        // Add the toppings
+        contents.append("TOPPINGS: ").append("\n");
+        if (toppings.length > 0) {
+            for (PizzaTopping topping : toppings) {
+                contents.append("\t").append(topping).append("\n");
+            }
+        } else {
+            contents.append("\t").append("None").append("\n");
+        }
+
+        // Return the contents
+        return contents.toString();
+    }
+
     private float calculatePrice() {
         float price = size.getPrice() + crust.getPrice();
 
