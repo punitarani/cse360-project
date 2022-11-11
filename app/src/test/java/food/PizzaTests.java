@@ -90,5 +90,11 @@ class PizzaTests {
                 "Small Pizza (Cheese) with Green Peppers, Ham, Olives, and Pineapple",
                 pizza.getName()
         );
+
+        // Get contents
+        assertEquals(
+                "Size: Small\nCrust: Cheese\nToppings: \n\tGreen Peppers\n\tHam\n\tOlives\n\tPineapple\n",
+                pizza.getContents()
+        );
     }
 }
