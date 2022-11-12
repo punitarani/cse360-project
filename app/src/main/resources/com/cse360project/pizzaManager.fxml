@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<SplitPane dividerPositions="0.2525083612040134" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
+   <items>
+      <VBox prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <Label text="Orders">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <ScrollPane prefHeight="383.0" prefWidth="145.0">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="365.0" prefWidth="145.0" />
+              </content>
+            </ScrollPane>
+         </children>
+      </VBox>
+      <VBox prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <Label text="1234567890">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Label>
+            <HBox prefHeight="375.0" prefWidth="444.0">
+               <children>
+                  <ScrollPane prefHeight="200.0" prefWidth="250.0">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="200.0" />
+                    </content>
+                  </ScrollPane>
+                  <Pane prefHeight="200.0" prefWidth="200.0" />
+               </children></HBox>
+         </children>
+      </VBox>
+   </items>
+</SplitPane>
