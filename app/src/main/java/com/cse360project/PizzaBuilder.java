@@ -43,7 +43,7 @@ public class PizzaBuilder {
 
         // Create the checkboxes for the toppings
         for (PizzaTopping topping : PizzaTopping.values()) {
-            CheckBox toppingCheckBox = new CheckBox(topping.toString());
+            CheckBox toppingCheckBox = new CheckBox(topping.getTopping());
             toppingsVBox.getChildren().add(toppingCheckBox);
         }
 
@@ -61,7 +61,7 @@ public class PizzaBuilder {
 
         // Iterate through PizzaSize enum
         for (PizzaSize size : PizzaSize.values()) {
-            sizes.add(size.toString());
+            sizes.add(size.getSize());
         }
 
         return FXCollections.observableArrayList(sizes);
@@ -76,7 +76,7 @@ public class PizzaBuilder {
 
         // Iterate through PizzaCrust enum
         for (PizzaCrust crust : PizzaCrust.values()) {
-            crusts.add(crust.toString());
+            crusts.add(crust.getCrust());
         }
 
         return FXCollections.observableArrayList(crusts);
