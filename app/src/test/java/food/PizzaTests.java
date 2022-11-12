@@ -98,3 +98,23 @@ class PizzaTests {
         );
     }
 }
+
+
+class PizzaCrustTests {
+    @Test
+    void testGetValue() {
+        for (PizzaCrust crust : PizzaCrust.values()) {
+            assertEquals(crust, PizzaCrust.getValue(crust.getCrust()));
+        }
+    }
+}
+
+
+class PizzaSizeTests {
+    @Test
+    void testGetValue() {
+        for (PizzaSize size : PizzaSize.values()) {
+            assertEquals(size, PizzaSize.getValue(size.getSize()));
+        }
+    }
+}

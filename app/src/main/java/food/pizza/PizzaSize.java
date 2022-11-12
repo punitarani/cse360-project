@@ -18,6 +18,24 @@ public enum PizzaSize {
         this.price = price;
     }
 
+    /**
+     * Get the Enum value from the String
+     * @param size Size of the pizza
+     * @return PizzaSize enum
+     */
+    public static PizzaSize getValue(String size) {
+        // Loop through the values
+        for (PizzaSize pizzaSize : PizzaSize.values()) {
+            // Check if the size matches
+            if (pizzaSize.getSize().equalsIgnoreCase(size)) {
+                return pizzaSize;
+            }
+        }
+
+        // Return first value by default (Should never happen)
+        return PizzaSize.values()[0];
+    }
+
     public String getSize() {
         return size;
     }
