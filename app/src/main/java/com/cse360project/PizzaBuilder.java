@@ -1,5 +1,7 @@
 package com.cse360project;
 
+import com.cse360project.order.Order;
+import food.pizza.Pizza;
 import food.pizza.PizzaCrust;
 import food.pizza.PizzaSize;
 import food.pizza.PizzaTopping;
@@ -33,6 +35,9 @@ public class PizzaBuilder {
     @FXML
     private Label orderCost;
 
+    private Pizza pizza;
+    private Order order;
+
     /**
      * Initialize the Pizza Builder page
      */
@@ -50,6 +55,44 @@ public class PizzaBuilder {
         // Set the default values
         sizeChoiceBox.setValue(getSizes().get(1));
         crustChoiceBox.setValue(getCrusts().get(1));
+
+        // Initialize the pizza and order
+        pizza = new Pizza();
+        order = new Order();
+
+        // Update the pizza
+        updatePizza();
+    }
+
+    /**
+     * Update the pizza object with the current values
+     */
+    private void updatePizza() {
+        // Get the selected size and crust
+        String size = sizeChoiceBox.getValue();
+        String crust = crustChoiceBox.getValue();
+
+        // Set the size and crust
+        pizza.setSize(PizzaSize.getValue(size));
+        pizza.setCrust(PizzaCrust.getValue(crust));
+
+        // Set the toppings
+        ArrayList<PizzaTopping> toppings = new ArrayList<>();
+        // Get the selected toppings
+        for (int i = 0; i < toppingsVBox.getChildren().size(); i++) {
+            CheckBox toppingCheckBox = (CheckBox) toppingsVBox.getChildren().get(i);
+
+            // Match the index to the Topping
+            if (toppingCheckBox.isSelected()) {
+                toppings.add(PizzaTopping.values()[i]);
+            }
+        }
+
+        // Set the toppings
+        pizza.setToppings(toppings.toArray(new PizzaTopping[0]));
+
+        // Update the pizza cost
+        pizzaCost.setText(String.format("$%.2f", pizza.getPrice()));
     }
 
     /**
