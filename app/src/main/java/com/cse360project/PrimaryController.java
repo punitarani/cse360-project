@@ -8,6 +8,6 @@ public class PrimaryController {
 
     @FXML
     private void switchToSecondary() throws IOException {
-        App.setMainPane("secondary");
+        App.setMainPane("pizzaBuilder");
     }
 }
