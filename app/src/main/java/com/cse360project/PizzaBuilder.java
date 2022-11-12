@@ -2,12 +2,15 @@ package com.cse360project;
 
 import food.pizza.PizzaCrust;
 import food.pizza.PizzaSize;
+import food.pizza.PizzaTopping;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
 
 import java.util.ArrayList;
 
@@ -19,6 +22,8 @@ public class PizzaBuilder {
     private ChoiceBox<String> sizeChoiceBox;
     @FXML
     private ChoiceBox<String> crustChoiceBox;
+    @FXML
+    private VBox toppingsVBox;
     @FXML
     private Button addPizzaButton;
     @FXML
@@ -35,6 +40,12 @@ public class PizzaBuilder {
         // Initialize the choice boxes
         sizeChoiceBox.setItems(getSizes());
         crustChoiceBox.setItems(getCrusts());
+
+        // Create the checkboxes for the toppings
+        for (PizzaTopping topping : PizzaTopping.values()) {
+            CheckBox toppingCheckBox = new CheckBox(topping.toString());
+            toppingsVBox.getChildren().add(toppingCheckBox);
+        }
 
         // Set the default values
         sizeChoiceBox.setValue(getSizes().get(1));
