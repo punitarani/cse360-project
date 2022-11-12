@@ -41,7 +41,7 @@
                                 <Insets left="10.0" />
                             </HBox.margin>
                         </Label>
-                        <ChoiceBox fx:id="crustChocieBox" prefWidth="225.0" />
+                        <ChoiceBox fx:id="crustChoiceBox" prefWidth="225.0" />
                     </children>
                 </HBox>
                 <TitledPane animated="false" text="Toppings">
