@@ -72,6 +72,20 @@ public class Order {
         items.remove(item);
     }
 
+    /**
+     * Get the total price of the order
+     * @return Order total
+     */
+    public float getTotal() {
+        float cost = 0;
+
+        for (Item item : items) {
+            cost += item.getPrice();
+        }
+
+        return cost;
+    }
+
     // endregion Public Methods
 
     // region Helper Methods

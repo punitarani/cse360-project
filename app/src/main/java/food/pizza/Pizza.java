@@ -109,8 +109,10 @@ public class Pizza extends Item {
             // Remove the last ", "
             name.delete(name.length() - 2, name.length());
 
-            // Replace the last ", " with ", and "
-            name.replace(name.lastIndexOf(", "), name.lastIndexOf(", ") + 2, ", and ");
+            // Replace the last ", " with ", and " if there are more than 1 Topping
+            if (this.toppings.length > 1) {
+                name.replace(name.lastIndexOf(", "), name.lastIndexOf(", ") + 2, ", and ");
+            }
         }
 
         // Set the name
