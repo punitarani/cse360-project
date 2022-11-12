@@ -91,21 +91,23 @@ public class PizzaBuilder {
         // Add the pizza to the order
         orderlist.addItem(pizza);
 
-        // Update the choice boxes
+        // Update the order list pane and the order cost
+        orderListPane.setContent(orderlist.orderListPane);
+        orderCost.setText(String.format("$%.2f", orderlist.order.getTotal()));
+
+        // Reset the pizza before resetting the page
+        pizza = new Pizza();
+
+        // Reset the choice boxes
         sizeChoiceBox.setValue(getSizes().get(1));
         crustChoiceBox.setValue(getCrusts().get(1));
 
-        // Update the checkboxes
+        // Reset the checkboxes
         for (int i = 0; i < toppingsVBox.getChildren().size(); i++) {
             CheckBox toppingCheckBox = (CheckBox) toppingsVBox.getChildren().get(i);
             toppingCheckBox.setSelected(false);
         }
 
-        // Update the order list pane
-        orderListPane.setContent(orderlist.orderListPane);
-
-        // Create a new pizza
-        pizza = new Pizza();
         updatePizza();
     }
 
