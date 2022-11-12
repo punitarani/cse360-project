@@ -49,6 +49,10 @@ public class PizzaBuilder {
         // Create the checkboxes for the toppings
         for (PizzaTopping topping : PizzaTopping.values()) {
             CheckBox toppingCheckBox = new CheckBox(topping.getTopping());
+
+            // Set the action for the checkbox to update the pizza
+            toppingCheckBox.setOnAction(event -> updatePizza());
+
             toppingsVBox.getChildren().add(toppingCheckBox);
         }
 
@@ -66,6 +70,7 @@ public class PizzaBuilder {
 
     /**
      * Update the pizza object with the current values
+     * Automatically updates the pizza cost label
      */
     private void updatePizza() {
         // Get the selected size and crust
