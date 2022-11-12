@@ -15,89 +15,89 @@
 <?import javafx.scene.text.Font?>
 
 <SplitPane dividerPositions="0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
-   <items>
-      <VBox prefHeight="200.0" prefWidth="100.0">
-         <children>
-            <HBox spacing="18.0">
-               <children>
-                  <Label text="Size">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="10.0" />
-                     </HBox.margin>
-                  </Label>
-                  <ChoiceBox prefWidth="225.0" />
-               </children>
-            </HBox>
-            <HBox prefWidth="200.0" spacing="10.0">
-               <children>
-                  <Label text="Crust">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="10.0" />
-                     </HBox.margin>
-                  </Label>
-                  <ChoiceBox prefWidth="225.0" />
-               </children>
-            </HBox>
-            <TitledPane animated="false" text="Toppings">
-               <content>
-                  <VBox prefHeight="320.0" prefWidth="100.0">
-                     <children>
-                        <CheckBox mnemonicParsing="false" text="Bacon" />
-                        <CheckBox mnemonicParsing="false" text="Chicken" />
-                        <CheckBox mnemonicParsing="false" text="Green Peppers" />
-                        <CheckBox mnemonicParsing="false" text="Jalapeno" />
-                        <CheckBox mnemonicParsing="false" text="Ham" />
-                        <CheckBox mnemonicParsing="false" text="Mushrooms" />
-                        <CheckBox mnemonicParsing="false" text="Olives" />
-                        <CheckBox mnemonicParsing="false" text="Onions" />
-                        <CheckBox mnemonicParsing="false" text="Pepperoni" />
-                        <CheckBox mnemonicParsing="false" text="Pineapple" />
-                        <CheckBox mnemonicParsing="false" text="Sausage" />
-                        <CheckBox mnemonicParsing="false" text="Extra Cheese" />
-                     </children>
-                  </VBox>
-               </content>
-            </TitledPane>
-            <ButtonBar prefHeight="40.0" prefWidth="200.0">
-              <buttons>
-                  <Label fx:id="pizzaCost" alignment="CENTER_RIGHT" contentDisplay="CENTER" text="\$0.0" />
-                <Button mnemonicParsing="false" text="Add Pizza">
-                     <font>
-                        <Font name="System Bold" size="12.0" />
-                     </font>
-                  </Button>
-              </buttons>
-            </ButtonBar>
-         </children>
-      </VBox>
-      <VBox prefHeight="200.0" prefWidth="100.0">
-         <children>
-            <ScrollPane prefHeight="460.0" prefWidth="200.0">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="370.0" prefWidth="290.0" />
-              </content>
-            </ScrollPane>
-            <ButtonBar prefHeight="40.0" prefWidth="200.0">
-              <buttons>
-                  <Label fx:id="orderCost" alignment="CENTER_RIGHT" text="\$0.0">
-                     <font>
-                        <Font name="System Bold" size="12.0" />
-                     </font>
-                  </Label>
-                <Button mnemonicParsing="false" text="Place Order">
-                     <font>
-                        <Font name="System Bold" size="12.0" />
-                     </font>
-                  </Button>
-              </buttons>
-            </ButtonBar>
-         </children>
-      </VBox>
-   </items>
+    <items>
+        <VBox prefHeight="200.0" prefWidth="100.0">
+            <children>
+                <HBox spacing="18.0">
+                    <children>
+                        <Label text="Size">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="10.0" />
+                            </HBox.margin>
+                        </Label>
+                        <ChoiceBox fx:id="sizeChoiceBox" prefWidth="225.0" />
+                    </children>
+                </HBox>
+                <HBox prefWidth="200.0" spacing="10.0">
+                    <children>
+                        <Label text="Crust">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="10.0" />
+                            </HBox.margin>
+                        </Label>
+                        <ChoiceBox fx:id="crustChocieBox" prefWidth="225.0" />
+                    </children>
+                </HBox>
+                <TitledPane animated="false" text="Toppings">
+                    <content>
+                        <VBox prefHeight="320.0" prefWidth="100.0">
+                            <children>
+                                <CheckBox mnemonicParsing="false" text="Bacon" />
+                                <CheckBox mnemonicParsing="false" text="Chicken" />
+                                <CheckBox mnemonicParsing="false" text="Green Peppers" />
+                                <CheckBox mnemonicParsing="false" text="Jalapeno" />
+                                <CheckBox mnemonicParsing="false" text="Ham" />
+                                <CheckBox mnemonicParsing="false" text="Mushrooms" />
+                                <CheckBox mnemonicParsing="false" text="Olives" />
+                                <CheckBox mnemonicParsing="false" text="Onions" />
+                                <CheckBox mnemonicParsing="false" text="Pepperoni" />
+                                <CheckBox mnemonicParsing="false" text="Pineapple" />
+                                <CheckBox mnemonicParsing="false" text="Sausage" />
+                                <CheckBox mnemonicParsing="false" text="Extra Cheese" />
+                            </children>
+                        </VBox>
+                    </content>
+                </TitledPane>
+                <ButtonBar prefHeight="40.0" prefWidth="200.0">
+                    <buttons>
+                        <Label fx:id="pizzaCost" alignment="CENTER_RIGHT" contentDisplay="CENTER" text="\$0.0" />
+                        <Button mnemonicParsing="false" text="Add Pizza">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Button>
+                    </buttons>
+                </ButtonBar>
+            </children>
+        </VBox>
+        <VBox prefHeight="200.0" prefWidth="100.0">
+            <children>
+                <ScrollPane prefHeight="460.0" prefWidth="200.0">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="370.0" prefWidth="290.0" />
+                    </content>
+                </ScrollPane>
+                <ButtonBar prefHeight="40.0" prefWidth="200.0">
+                    <buttons>
+                        <Label fx:id="orderCost" alignment="CENTER_RIGHT" text="\$0.0">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Label>
+                        <Button mnemonicParsing="false" text="Place Order">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Button>
+                    </buttons>
+                </ButtonBar>
+            </children>
+        </VBox>
+    </items>
 </SplitPane>
