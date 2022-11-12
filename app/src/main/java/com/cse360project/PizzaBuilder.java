@@ -42,15 +42,23 @@ public class PizzaBuilder {
      * Initialize the Pizza Builder page
      */
     public void initialize() {
+        // Initialize the pizza and order
+        pizza = new Pizza();
+        order = new Order();
+
         // Initialize the choice boxes
         sizeChoiceBox.setItems(getSizes());
         crustChoiceBox.setItems(getCrusts());
+
+        // Set the action for the ChoiceBoxes
+        sizeChoiceBox.setOnAction(event -> updatePizza());
+        crustChoiceBox.setOnAction(event -> updatePizza());
 
         // Create the checkboxes for the toppings
         for (PizzaTopping topping : PizzaTopping.values()) {
             CheckBox toppingCheckBox = new CheckBox(topping.getTopping());
 
-            // Set the action for the checkbox to update the pizza
+            // Set the action for the CheckBoxes to update the pizza
             toppingCheckBox.setOnAction(event -> updatePizza());
 
             toppingsVBox.getChildren().add(toppingCheckBox);
@@ -59,10 +67,6 @@ public class PizzaBuilder {
         // Set the default values
         sizeChoiceBox.setValue(getSizes().get(1));
         crustChoiceBox.setValue(getCrusts().get(1));
-
-        // Initialize the pizza and order
-        pizza = new Pizza();
-        order = new Order();
 
         // Update the pizza
         updatePizza();
