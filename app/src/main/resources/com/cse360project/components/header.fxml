@@ -14,3 +14,29 @@
       </Label>
    </children>
 </Pane>
+
+<HBox prefHeight="44.35" prefWidth="560.0" styleClass="top">
+         <children>
+            <ImageView fitHeight="50.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../../OneDrive/Pictures/Screenshots/Screenshot%20(111).png" />
+               </image>
+               <HBox.margin>
+                  <Insets bottom="2.0" left="10.0" top="2.0" />
+               </HBox.margin>
+            </ImageView>
+            <Label fx:id="title" alignment="TOP_CENTER" prefHeight="43.0" prefWidth="182.0" text="Pizza Tracker" textFill="#f3e8ee">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+               <opaqueInsets>
+                  <Insets right="50.0" top="8.0" />
+               </opaqueInsets>
+               <HBox.margin>
+                  <Insets left="135.0" top="5.0" />
+               </HBox.margin>
+            </Label>
+         </children>
