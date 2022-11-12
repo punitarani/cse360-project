@@ -1,6 +1,6 @@
 package com.cse360project;
 
-import order.Order;
+import com.cse360project.orderlist.OrderList;
 import food.pizza.Pizza;
 import food.pizza.PizzaCrust;
 import food.pizza.PizzaSize;
@@ -8,11 +8,9 @@ import food.pizza.PizzaTopping;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
+import order.Order;
 
 import java.util.ArrayList;
 
@@ -34,17 +32,28 @@ public class PizzaBuilder {
     private Label pizzaCost;
     @FXML
     private Label orderCost;
+    @FXML
+    private ScrollPane orderListPane;
 
     private Pizza pizza;
     private Order order;
+    private OrderList orderlist;
 
     /**
      * Initialize the Pizza Builder page
      */
     public void initialize() {
-        // Initialize the pizza and order
+        // Initialize the pizza
         pizza = new Pizza();
-        order = new Order();
+
+        // Initialize the OrderList and bind the Order
+        orderlist = new OrderList(new Order());
+        order = orderlist.order;
+
+        // Initialize ScrollPane content elements
+        orderlist.orderListPane.prefWidthProperty().bind(orderListPane.widthProperty());
+        orderListPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        orderListPane.setFitToWidth(true);
 
         // Initialize the choice boxes
         sizeChoiceBox.setItems(getSizes());
@@ -53,6 +62,9 @@ public class PizzaBuilder {
         // Set the action for the ChoiceBoxes
         sizeChoiceBox.setOnAction(event -> updatePizza());
         crustChoiceBox.setOnAction(event -> updatePizza());
+
+        // Set the action for the addPizzaButton
+        addPizzaButton.setOnAction(event -> handleAddPizza());
 
         // Create the checkboxes for the toppings
         for (PizzaTopping topping : PizzaTopping.values()) {
@@ -69,6 +81,31 @@ public class PizzaBuilder {
         crustChoiceBox.setValue(getCrusts().get(1));
 
         // Update the pizza
+        updatePizza();
+    }
+
+    /**
+     * Handle the addPizzaButton action
+     */
+    private void handleAddPizza() {
+        // Add the pizza to the order
+        orderlist.addItem(pizza);
+
+        // Update the choice boxes
+        sizeChoiceBox.setValue(getSizes().get(1));
+        crustChoiceBox.setValue(getCrusts().get(1));
+
+        // Update the checkboxes
+        for (int i = 0; i < toppingsVBox.getChildren().size(); i++) {
+            CheckBox toppingCheckBox = (CheckBox) toppingsVBox.getChildren().get(i);
+            toppingCheckBox.setSelected(false);
+        }
+
+        // Update the order list pane
+        orderListPane.setContent(orderlist.orderListPane);
+
+        // Create a new pizza
+        pizza = new Pizza();
         updatePizza();
     }
 
