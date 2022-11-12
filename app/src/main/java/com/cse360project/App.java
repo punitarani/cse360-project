@@ -32,9 +32,14 @@ public class App extends Application {
      * @param fxml The fxml file to load
      * @throws IOException If the fxml file is not found
      */
-    static void setMainPane(String fxml) throws IOException {
+    static void setMainPane(String fxml) {
         mainPane.getChildren().clear();
-        mainPane.getChildren().add(loadFXML(fxml));
+
+        try {
+            mainPane.getChildren().add(loadFXML(fxml));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /**

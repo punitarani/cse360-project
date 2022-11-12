@@ -2,12 +2,10 @@ package com.cse360project;
 
 import javafx.fxml.FXML;
 
-import java.io.IOException;
-
 public class SecondaryController {
 
     @FXML
-    private void switchToPrimary() throws IOException {
+    private void switchToPrimary() {
         App.setMainPane("primary");
     }
 }
