@@ -1,5 +1,6 @@
 package com.cse360project;
 
+import food.pizza.PizzaCrust;
 import food.pizza.PizzaSize;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -63,7 +64,7 @@ public class PizzaBuilder {
         ArrayList<String> crusts = new ArrayList<>();
 
         // Iterate through PizzaCrust enum
-        for (food.pizza.PizzaCrust crust : food.pizza.PizzaCrust.values()) {
+        for (PizzaCrust crust : PizzaCrust.values()) {
             crusts.add(crust.toString());
         }
 
