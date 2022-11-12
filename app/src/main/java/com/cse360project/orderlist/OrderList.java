@@ -50,6 +50,9 @@ public class OrderList {
      * @param item The item to add
      */
     public void addItem(Item item) {
+        order.addItem(item);
+
+        // Create OrderItem GUI element
         OrderItem orderItem = new OrderItem(item);
 
         // Create a new row in the grid pane and add the orderItem
