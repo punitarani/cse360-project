@@ -1,6 +1,6 @@
 package com.cse360project;
 
-import com.cse360project.order.Order;
+import order.Order;
 import food.pizza.Pizza;
 import food.pizza.PizzaCrust;
 import food.pizza.PizzaSize;
