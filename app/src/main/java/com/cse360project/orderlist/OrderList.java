@@ -15,6 +15,7 @@ import java.util.ArrayList;
 public class OrderList {
     public GridPane orderListPane;
 
+    public Order order;
     private ArrayList<OrderItem> orderItems;
 
     /**
@@ -22,6 +23,7 @@ public class OrderList {
      * @param order The order to display
      */
     public OrderList(Order order) {
+        this.order = order;
         orderItems = new ArrayList<>();
 
         ColumnConstraints columnConstraints = new ColumnConstraints();
