@@ -30,7 +30,6 @@ public class App extends Application {
     /**
      * Set the main pane (#mainPane in app.fxml)
      * @param fxml The fxml file to load
-     * @throws IOException If the fxml file is not found
      */
     static void setMainPane(String fxml) {
         mainPane.getChildren().clear();
@@ -39,6 +38,8 @@ public class App extends Application {
             mainPane.getChildren().add(loadFXML(fxml));
         } catch (IOException e) {
             e.printStackTrace();
+            // Terminate the program
+            System.exit(1);
         }
     }
 
