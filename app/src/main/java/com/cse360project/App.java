@@ -83,7 +83,7 @@ public class App extends Application {
         scene.setFill(Color.TRANSPARENT);
 
         loadComponents();
-        setMainPane("primary");
+        setMainPane("loginPage");
         setHeaderPane("components/header");
 
         stage.setTitle("ASU Group 48 Pizza Kitchen");
