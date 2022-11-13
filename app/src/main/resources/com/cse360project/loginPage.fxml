@@ -2,12 +2,29 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse360project.LoginPageController">
-   <children>
-      <TextField fx:id="idField" layoutX="226.0" layoutY="159.0" promptText="ASU ID" />
-      <Button fx:id="customerButton" layoutX="226.0" layoutY="200.0" mnemonicParsing="false" text="Customer" />
-      <Button fx:id="chefButton" layoutX="334.0" layoutY="200.0" mnemonicParsing="false" text="Chef" />
-   </children>
-</AnchorPane>
+<VBox prefHeight="480.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse360project.LoginPageController">
+  <children>
+      <AnchorPane prefHeight="400.0" prefWidth="680.0">
+         <children>
+            <PasswordField fx:id="idField" layoutX="130.0" layoutY="163.0" prefHeight="35.0" prefWidth="420.0" style="-fx-background-color: #4e4b63; -fx-background-radius: 10px;" />
+            <Button fx:id="chefButton" layoutX="130.0" layoutY="215.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="142.0" style="-fx-background-color: #e6281e; -fx-background-radius: 10px;" text="Chef" textFill="#fcfcfc">
+               <font>
+                  <Font name="PT Sans" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="customerButton" layoutX="292.0" layoutY="215.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="258.0" style="-fx-background-color: #17804d; -fx-background-radius: 10px;" text="Customer" textFill="#f5f5f5">
+               <font>
+                  <Font name="PT Sans" size="18.0" />
+               </font>
+            </Button>
+            <Label layoutX="130.0" layoutY="146.0" text="ASURITE">
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+  </children>
+</VBox>
