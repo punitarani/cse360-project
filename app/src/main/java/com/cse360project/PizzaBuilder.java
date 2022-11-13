@@ -65,7 +65,7 @@ public class PizzaBuilder {
 
         // Set the action for the addPizzaButton
         addPizzaButton.setOnAction(event -> handleAddPizza());
-        
+
         //Set the action for the placeOrderButton
         placeOrderButton.setOnAction(event -> placeOrderButton());
 
@@ -175,8 +175,8 @@ public class PizzaBuilder {
 
         return FXCollections.observableArrayList(crusts);
     }
+
     private void placeOrderButton() {
         App.setMainPane("pizzaTracker");
     }
-
 }
