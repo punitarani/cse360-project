@@ -1,13 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
 
+  This file is available and licensed under the following license:
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse360project.LoginPageController">
-   <children>
-      <TextField fx:id="idField" layoutX="226.0" layoutY="159.0" promptText="ASU ID" />
-      <Button fx:id="customerButton" layoutX="226.0" layoutY="200.0" mnemonicParsing="false" text="Customer" />
-      <Button fx:id="chefButton" layoutX="334.0" layoutY="200.0" mnemonicParsing="false" text="Chef" />
-   </children>
-</AnchorPane>
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="646.0" prefWidth="900.0" style="-fx-background-color: #252323;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse360project.PizzaManagerController">
+  <children>
+      <Pane prefHeight="162.0" prefWidth="900.0">
+         <children>
+            <ImageView fitHeight="113.0" fitWidth="121.0" layoutX="37.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../cse360-project/app/src/main/resources/com/cse360project/static/images/logos.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="187.0" layoutY="12.0" prefHeight="127.0" prefWidth="527.0" text="Sun Devil Pizza" textFill="#f3e8ee">
+               <font>
+                  <Font size="64.0" />
+               </font>
+            </Label>
+            <MenuButton layoutX="728.0" layoutY="12.0" mnemonicParsing="false" prefHeight="127.0" prefWidth="162.0" text="MENU">
+              <items>
+                <MenuItem fx:id="leave" mnemonicParsing="false" onAction="#ReturnLogin" text="Exit" />
+              </items>
+            </MenuButton>
+            <ImageView fitHeight="151.0" fitWidth="169.0" layoutX="722.0" layoutY="6" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../cse360-project/app/src/main/resources/com/cse360project/static/images/dropdown.png" />
+               </image>
+            </ImageView>
+            <Button blendMode="LIGHTEN" layoutX="771.0" layoutY="55.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="76.0" style="-fx-background-color: #252323;" />
+         </children>
+      </Pane>
+      <AnchorPane prefHeight="511.0" prefWidth="1622.0" style="-fx-background-color: #f4e8c1;">
+         <children>
+            <PasswordField layoutX="241.0" layoutY="149.0" prefHeight="35.0" prefWidth="419.0" style="-fx-background-color: #4e4b63; -fx-background-radius: 10px;" AnchorPane.leftAnchor="241.0" AnchorPane.rightAnchor="240.0" />
+            <Button layoutX="241.0" layoutY="201.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="142.0" style="-fx-background-color: #e6281e; -fx-background-radius: 10px;" text="Chef" textFill="#fcfcfc">
+               <font>
+                  <Font name="PT Sans" size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="402.0" layoutY="201.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="258.0" style="-fx-background-color: #17804d; -fx-background-radius: 10px;" text="Customer" textFill="#f5f5f5">
+               <font>
+                  <Font name="PT Sans" size="18.0" />
+               </font>
+            </Button>
+            <Label layoutX="241.0" layoutY="132.0" text="ASURITE">
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+  </children>
+</VBox>
