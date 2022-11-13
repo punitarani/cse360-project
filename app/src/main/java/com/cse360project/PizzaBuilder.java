@@ -67,7 +67,7 @@ public class PizzaBuilder {
         addPizzaButton.setOnAction(event -> handleAddPizza());
 
         //Set the action for the placeOrderButton
-        placeOrderButton.setOnAction(event -> placeOrderButton());
+        placeOrderButton.setOnAction(event -> handlePlaceOrder());
 
         // Create the checkboxes for the toppings
         for (PizzaTopping topping : PizzaTopping.values()) {
@@ -112,6 +112,10 @@ public class PizzaBuilder {
         }
 
         updatePizza();
+    }
+
+    private void handlePlaceOrder() {
+        App.setMainPane("pizzaTracker");
     }
 
     /**
@@ -174,9 +178,5 @@ public class PizzaBuilder {
         }
 
         return FXCollections.observableArrayList(crusts);
-    }
-
-    private void placeOrderButton() {
-        App.setMainPane("pizzaTracker");
     }
 }
