@@ -21,25 +21,26 @@ public class LoginPageController {
 
     private void customerButtonHandler() {
         asurite = idField.getText();
-
-        if(asurite.charAt(0) == '1' && asurite.length() == 10){
-            App.setMainPane("pizzaBuilder");
-        }else{
-            //Throw error message
-            errorMessage.setText("Error: ASURITE NOT VALID");
+        if(!asurite.isBlank()) {
+            if (asurite.charAt(0) == '1' && asurite.length() == 10) {
+                App.setMainPane("pizzaBuilder");
+            } else {
+                //Throw error message
+                errorMessage.setText("Error: ASURITE NOT VALID");
+            }
         }
-
     }
 
     private void chefButtonHandler() {
 
         asurite = idField.getText();
-
-        if(asurite.charAt(0) == '1' && asurite.length() == 10){
-            App.setMainPane("pizzaManager");
-        }else{
-            //Throw error message
-            errorMessage.setText("Error: ASURITE NOT VALID");
+        if(!asurite.isBlank()) {
+            if (asurite.charAt(0) == '1' && asurite.length() == 10) {
+                App.setMainPane("pizzaManager");
+            } else {
+                //Throw error message
+                errorMessage.setText("Error: ASURITE NOT VALID");
+            }
         }
     }
 
